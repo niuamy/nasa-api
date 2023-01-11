@@ -18,15 +18,13 @@ def printResults(response, date):
     print(f"\nThe image can be seen here: {link}")
 
 
-
 def getPic(date):
-  URL_APOD = "https://api.nasa.gov/planetary/apod"
+  url = "https://api.nasa.gov/planetary/apod"
   params = {
       'api_key': apiKey,
-      'date': date,
-      'hd': 'True'
+      'date': date
   }
-  response = requests.get(URL_APOD, params=params).json()
+  response = requests.get(url, params=params).json()
   printResults(response, date)
 
 
