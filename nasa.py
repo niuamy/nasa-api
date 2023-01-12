@@ -8,16 +8,6 @@ def chooseDate():
     return date
 
 
-def printResults(response, date):
-    link = response['url']
-    explanation = response['explanation']
-    title = response['title']
-
-    print(f"On {date}, NASA's astronomy photo of the day was entitled \"{title}\".")
-    print(f"\nAccompanied with the photo is the explanation: \"{explanation}\"")
-    print(f"\nThe image can be seen here: {link}")
-
-
 def getPic(date):
   url = "https://api.nasa.gov/planetary/apod"
   params = {
@@ -25,7 +15,7 @@ def getPic(date):
       'date': date
   }
   response = requests.get(url, params=params).json()
-  printResults(response, date)
+  print(response)
 
 
 def main():
